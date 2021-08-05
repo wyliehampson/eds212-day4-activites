@@ -1,0 +1,54 @@
+---
+title: "R Exploring"
+author: "Wylie Hampson"
+date: "8/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+## Explore the Diamonds dataset
+
+```{r}
+# Use the names function
+names(diamonds)
+
+# Find the dimensions
+dim(diamonds)
+
+# Find the summary
+summary(diamonds)
+
+# Find the first few rows
+head(diamonds)
+
+# Find the last few rows
+tail(diamonds)
+
+# Using skimr
+skimr::skim(diamonds)
+
+# Use GGally::ggpairs()
+GGally::ggpairs(diamonds)
+```
+
+## Make some graphs
+
+```{r}
+# Scatter plot of carat as a function of price
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point()
+
+# Histogram of carat values
+ggplot(data = diamonds, aes(x = carat)) +
+  geom_histogram()
+```
+
+
+
+
