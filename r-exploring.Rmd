@@ -41,7 +41,8 @@ GGally::ggpairs(diamonds)
 
 ```{r}
 # Scatter plot of carat as a function of price
-ggplot(data = diamonds, aes(x = carat, y = price)) +
+ggplot(data = diamonds, aes(x = carat, y = price
+)) +
   geom_point()
 
 # Histogram of carat values
